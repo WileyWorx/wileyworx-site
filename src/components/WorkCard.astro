@@ -1,0 +1,25 @@
+---
+import type { WorkItem } from "../data/work";
+
+interface Props {
+  item: WorkItem;
+  span?: string;
+}
+
+const { item, span = "span-6" } = Astro.props;
+const role = item.roles.filter((r) => r !== "Talent").slice(0, 2).join(" · ");
+---
+
+<a class={`card ${span}`} href={`/work/${item.slug}/`}>
+  <div class="card-media">
+    <img src={item.thumb} alt="" loading="lazy" />
+  </div>
+  <div class="card-body">
+    <div class="card-meta">
+      <span>{item.client || item.category}</span>
+      <span>{item.year}</span>
+    </div>
+    <h3>{item.title}</h3>
+    <div class="card-meta"><span>{role}</span></div>
+  </div>
+</a>

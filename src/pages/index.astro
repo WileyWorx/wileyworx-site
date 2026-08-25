@@ -1,0 +1,33 @@
+---
+import Base from "../layouts/Base.astro";
+import WorkCard from "../components/WorkCard.astro";
+import { featured } from "../data/work";
+
+const lead = featured.slice(0, 8);
+const spans = ["span-8", "span-4", "span-6", "span-6", "span-4", "span-8", "span-6", "span-6"];
+---
+
+<Base title="Jack Wiley · Director, Producer, EP">
+  <section class="hero">
+    <p class="kicker">WileyWorx</p>
+    <h1>Jack Wiley</h1>
+    <div class="roles">
+      <span>Director</span>
+      <span>Producer</span>
+      <span>Executive Producer</span>
+    </div>
+    <p>
+      A decade in the camera department, now leading commercial productions from producer, EP, and director seats. Based in Salt Lake City. Working nationwide.
+    </p>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>Selected work</h2>
+      <a href="/work/">Full archive</a>
+    </div>
+    <div class="grid">
+      {lead.map((item, i) => <WorkCard item={item} span={spans[i] || "span-6"} />)}
+    </div>
+  </section>
+</Base>

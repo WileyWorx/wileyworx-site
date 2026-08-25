@@ -1,0 +1,21 @@
+# WileyWorx site — Cursor rules
+
+## Project
+Personal director / producer / EP portfolio for Jack Wiley (WileyWorx LLC).
+- Stack: Astro, static, Vercel.
+- This workspace: `/Users/jackwiley/Downloads/wileyworx-site`
+- GitHub: WileyWorx/wileyworx-site
+- Domain: wileyworx.com (cut over from Network Solutions when DNS is ready)
+
+## Hard boundaries
+- Work only on WileyWorx from this workspace.
+- Do not modify Gasworks (`gasworks-site`) or Property Pocket from this repo.
+
+## Positioning
+Lead with director, producer, and EP for commercial productions. Camera and DP are the foundation, not the headline. Do not rebuild a services mill (seniors, weddings, acting reel as primary nav).
+
+## Copy
+No hyphens, en dashes, or em dashes in visitor-facing text unless required (phone numbers, URLs, filenames, legal brand spellings). Prefer periods, commas, or colons. Do not call WileyWorx a production company or production house.
+
+## Git
+After completing a task that changes this site, commit and push to main without asking, unless the user says to stop.

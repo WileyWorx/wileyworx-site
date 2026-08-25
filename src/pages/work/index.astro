@@ -1,0 +1,54 @@
+---
+import Base from "../../layouts/Base.astro";
+import { work, type Category } from "../../data/work";
+
+const cats: Array<"All" | Category> = ["All", "Commercial", "Narrative", "Music", "Sports", "Documentary"];
+---
+
+<Base title="Work · Jack Wiley" description="Selected commercial, narrative, music, and sports work by director and producer Jack Wiley.">
+  <section class="section">
+    <div class="section-head">
+      <h2>Work</h2>
+    </div>
+    <p class="prose" style="margin-bottom: 1.5rem;">
+      Credits from commercial productions, narrative films, music, and sports. Roles are listed as they were on the day: director, producer, camera, edit, and more.
+    </p>
+    <div class="filters" id="filters">
+      {cats.map((cat) => (
+        <button type="button" data-cat={cat} class={cat === "All" ? "is-on" : undefined}>{cat}</button>
+      ))}
+    </div>
+    <div class="grid" id="archive">
+      {work.map((item) => (
+        <a class="card span-6" href={`/work/${item.slug}/`} data-category={item.category}>
+          <div class="card-media">
+            <img src={item.thumb} alt="" loading="lazy" />
+          </div>
+          <div class="card-body">
+            <div class="card-meta">
+              <span>{item.client || item.category}</span>
+              <span>{item.year}</span>
+            </div>
+            <h3>{item.title}</h3>
+            <div class="card-meta"><span>{item.roles.filter((r) => r !== "Talent").slice(0, 3).join(" · ")}</span></div>
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+</Base>
+
+<script>
+  const buttons = document.querySelectorAll<HTMLButtonElement>("#filters button");
+  const cards = document.querySelectorAll<HTMLElement>("#archive [data-category]");
+  buttons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const cat = btn.dataset.cat;
+      buttons.forEach((b) => b.classList.toggle("is-on", b === btn));
+      cards.forEach((card) => {
+        const show = cat === "All" || card.dataset.category === cat;
+        card.style.display = show ? "" : "none";
+      });
+    });
+  });
+</script>

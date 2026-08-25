@@ -1,0 +1,53 @@
+---
+import Base from "../layouts/Base.astro";
+import { comingSoon } from "../data/work";
+---
+
+<Base title="About · Jack Wiley" description="Jack Wiley is a Salt Lake City director, producer, and executive producer with a decade in camera and live broadcast.">
+  <section class="section split">
+    <div>
+      <p class="kicker">About</p>
+      <h2>Producer first. Camera as the foundation.</h2>
+      <p>
+        I spent more than ten years as a camera operator and director of photography across commercials, music, narrative, sports, and live broadcast. That is how I learned what every department actually needs on a day. I now take producer, EP, and director seats on commercial productions.
+      </p>
+      <p>
+        People and process are the work. I like building the crew, holding the schedule, and making the picture with a clear point of view. Economics, psychology, and finance from the University of Utah, plus a financial markets certificate from Yale, sit behind the creative call.
+      </p>
+      <p>
+        I started with a camera my grandfather gave me at twelve, filming friends snowboarding. That led to a professional snow career and a network that still shows up on set. The job now is leading productions, not listing every role I have ever taken.
+      </p>
+      <div class="facts">
+        <div>
+          <h3>Based</h3>
+          <p>Salt Lake City. Nationwide.</p>
+        </div>
+        <div>
+          <h3>Broadcast</h3>
+          <p>ESPN, Pac-12, University of Utah live production.</p>
+        </div>
+        <div>
+          <h3>Air</h3>
+          <p>FAA Part 107. DJI Inspire 2 owner and pilot.</p>
+        </div>
+        <div>
+          <h3>Press</h3>
+          <p><a href="https://voyageutah.com/interview/check-out-jack-wileys-story" style="color: var(--accent);">Voyage Utah interview</a></p>
+        </div>
+      </div>
+    </div>
+    <img class="portrait" src="/images/stills/portrait.webp" alt="On set still from WileyWorx work" />
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>In production</h2>
+    </div>
+    <p class="prose" style="margin-bottom: 1rem;">
+      Projects completed or in post that are not public yet. Listed as they appeared on the previous site.
+    </p>
+    <ul class="coming">
+      {comingSoon.map((item) => <li>{item}</li>)}
+    </ul>
+  </section>
+</Base>

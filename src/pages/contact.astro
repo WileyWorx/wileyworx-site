@@ -1,0 +1,41 @@
+---
+import Base from "../layouts/Base.astro";
+---
+
+<Base title="Contact · Jack Wiley" description="Contact Jack Wiley at WileyWorx for director, producer, and EP work.">
+  <section class="section contact-panel">
+    <div>
+      <p class="kicker">Contact</p>
+      <h1>Start a conversation.</h1>
+      <p class="prose">
+        New productions, producing, directing, or crewing. Leave a voicemail if the call is missed.
+      </p>
+      <div class="contact-list" style="margin-top: 1.5rem;">
+        <a href="mailto:jack@wileyworx.com">jack@wileyworx.com</a>
+        <a href="tel:2069546950">(206) 954-6950</a>
+        <a href="https://www.instagram.com/wileyworx/">@wileyworx</a>
+        <a href="https://www.linkedin.com/in/jack-wiley/">LinkedIn</a>
+      </div>
+    </div>
+    <form action="https://formsubmit.co/jack@wileyworx.com" method="POST">
+      <input type="hidden" name="_subject" value="WileyWorx inquiry" />
+      <input type="hidden" name="_captcha" value="false" />
+      <input type="hidden" name="_next" value="https://wileyworx.com/contact/?sent=1" />
+      <label>Name<input type="text" name="name" required /></label>
+      <label>Email<input type="email" name="email" required /></label>
+      <label>Phone<input type="tel" name="phone" /></label>
+      <label>
+        Subject
+        <select name="subject">
+          <option>New production</option>
+          <option>Producing or EP</option>
+          <option>Directing</option>
+          <option>Crewing</option>
+          <option>General</option>
+        </select>
+      </label>
+      <label>Message<textarea name="message" required></textarea></label>
+      <button class="submit" type="submit">Send</button>
+    </form>
+  </section>
+</Base>

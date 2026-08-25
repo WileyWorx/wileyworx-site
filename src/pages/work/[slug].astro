@@ -1,0 +1,47 @@
+---
+import Base from "../../layouts/Base.astro";
+import { work, bySlug } from "../../data/work";
+
+export function getStaticPaths() {
+  return work.map((item) => ({ params: { slug: item.slug } }));
+}
+
+const item = bySlug(Astro.params.slug as string)!;
+
+const embedSrc =
+  item.embed?.kind === "youtube"
+    ? `https://www.youtube.com/embed/${item.embed.id}?rel=0`
+    : item.embed?.kind === "vimeo"
+      ? `https://player.vimeo.com/video/${item.embed.id}`
+      : null;
+---
+
+<Base title={`${item.title} · Jack Wiley`} description={item.summary}>
+  <section class="section">
+    <p class="kicker">{item.client || item.category} · {item.year}</p>
+    <h1 style="font-size: clamp(2.4rem, 7vw, 4.8rem); margin: 0.4rem 0 0.6rem;">{item.title}</h1>
+    <div class="roles">
+      {item.roles.map((role) => <span>{role}</span>)}
+    </div>
+
+    {embedSrc ? (
+      <div class="player">
+        <iframe src={embedSrc} title={item.title} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+      </div>
+    ) : item.embed?.kind === "link" ? (
+      <p class="prose" style="margin-top: 1.5rem;">
+        <a href={item.embed.href} style="color: var(--accent);">{item.embed.label}</a>
+      </p>
+    ) : (
+      <div class="player">
+        <img src={item.thumb} alt="" />
+      </div>
+    )}
+
+    <div class="prose">
+      <p>{item.summary}</p>
+      {item.credits && <p>{item.credits}</p>}
+      <p><a href="/work/" style="color: var(--accent);">Back to work</a></p>
+    </div>
+  </section>
+</Base>

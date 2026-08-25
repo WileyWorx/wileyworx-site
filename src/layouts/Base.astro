@@ -1,0 +1,56 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Jack Wiley is a director, producer, and executive producer for commercial productions. WileyWorx, Salt Lake City." } = Astro.props;
+const path = Astro.url.pathname;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#0b0a09" />
+    <link rel="icon" href="/images/logo-w.webp" type="image/webp" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/images/stills/slate.webp" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/">
+        <img src="/images/logo-w.webp" alt="" width="28" height="28" />
+        <span class="brand-name">Jack Wiley</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="/work/" aria-current={path.startsWith("/work") ? "page" : undefined}>Work</a>
+        <a href="/about/" aria-current={path.startsWith("/about") ? "page" : undefined}>About</a>
+        <a href="/contact/" aria-current={path.startsWith("/contact") ? "page" : undefined}>Contact</a>
+      </nav>
+    </header>
+    <slot />
+    <footer class="site-footer">
+      <div>WileyWorx · Salt Lake City</div>
+      <div>
+        <a href="mailto:jack@wileyworx.com">jack@wileyworx.com</a>
+        ·
+        <a href="https://www.instagram.com/wileyworx/">Instagram</a>
+        ·
+        <a href="/privacy/">Privacy</a>
+        ·
+        <a href="/terms/">Terms</a>
+      </div>
+    </footer>
+  </body>
+</html>
