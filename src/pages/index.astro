@@ -1,9 +1,19 @@
 ---
 import Base from "../layouts/Base.astro";
 import WorkCard from "../components/WorkCard.astro";
-import { featured } from "../data/work";
+import { work } from "../data/work";
 
-const lead = featured.slice(0, 8);
+const homeSlugs = [
+  "shan-not-your-baby",
+  "dont-apologize-american-dream",
+  "coors-light",
+  "regi-i-was-here",
+  "shadow-deals",
+  "players-jordan-clarkson",
+  "bentley-systems",
+  "protect-our-winters",
+];
+const lead = homeSlugs.map((slug) => work.find((item) => item.slug === slug)!);
 const spans = ["span-8", "span-4", "span-6", "span-6", "span-4", "span-8", "span-6", "span-6"];
 ---
 
