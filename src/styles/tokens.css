@@ -33,7 +33,9 @@
   --space-2xl: clamp(1.85rem, 1.2rem + 1.8vw, 3rem);
   --space-3xl: clamp(2.5rem, 1.5rem + 2.8vw, 4.5rem);
 
-  /* 640 / 960 / 1280. Chosen where layout actually changes, not by device name. */
+  /* 640 / 960 / 1280. Chosen where layout actually changes, not by device name.
+     Base styles are the narrow layout because unqualified CSS applies everywhere.
+     min-width queries add wider layouts. Neither end of the range is a fallback. */
   --bp-sm: 40rem;
   --bp-md: 60rem;
   --bp-lg: 80rem;

@@ -1,8 +1,10 @@
 #!/usr/bin/env node
 /**
  * Responsive constraints for WileyWorx.
- * Tokens live in src/styles/tokens.css. This script fails on the anti-patterns
- * that reintroduce desktop-first or non-fluid CSS.
+ * Tokens live in src/styles/tokens.css. Narrow-first authoring is a cascade
+ * technique (unqualified CSS applies everywhere; min-width adds wider
+ * structure), not a product priority. This script fails on max-width queries,
+ * vh, and non-fluid sizes that reintroduce undo-rules or pixel type.
  */
 import { readdirSync, readFileSync, statSync } from "node:fs";
 import { dirname, extname, join, relative } from "node:path";
@@ -135,7 +137,7 @@ for (const file of files) {
   const maxMedia = /@media[^{]*max-width/gi;
   let match;
   while ((match = maxMedia.exec(css))) {
-    add(errors, file, lineAt(css, match.index), "max-width media queries are not allowed (mobile-first min-width only)");
+    add(errors, file, lineAt(css, match.index), "max-width media queries are not allowed (they undo a wide layout; add wider structure with min-width)");
   }
 
   const vh = /(?<![dsl])vh\b/gi;

@@ -8,6 +8,7 @@ export const routes = [
   { name: "terms", path: "/terms/" },
 ] as const;
 
+/** First-class widths, including tablet and mid-size. 768 and 1024 are not leftovers. */
 export const viewports = [
   { name: "320", width: 320, height: 720 },
   { name: "375", width: 375, height: 812 },
