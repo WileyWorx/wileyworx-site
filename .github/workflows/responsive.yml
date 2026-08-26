@@ -24,10 +24,13 @@ jobs:
 
       - run: npm ci
 
+      - name: Lint responsive CSS
+        run: npm run lint:responsive
+
       - run: npx playwright install --with-deps chromium
 
       - name: Run responsive checks
-        run: npm run check:responsive
+        run: npm run test:responsive
         env:
           CI: true
 

@@ -7,7 +7,9 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "check:responsive": "playwright test",
+    "lint:responsive": "node scripts/lint-responsive.mjs",
+    "test:responsive": "playwright test",
+    "check:responsive": "npm run lint:responsive && npm run test:responsive",
     "check:responsive:update": "playwright test --update-snapshots"
   },
   "dependencies": {

@@ -1,0 +1,57 @@
+/* WileyWorx design tokens.
+   Define values here. Reference them everywhere else.
+   @media and @container cannot read custom properties, so those
+   queries must repeat a --bp-* value exactly (see lint:responsive). */
+
+:root {
+  --bg: #0b0a09;
+  --bg-elev: #141210;
+  --fg: #f4efe6;
+  --muted: #9c9488;
+  --line: rgba(244, 239, 230, 0.12);
+  --accent: #c9a46c;
+  --accent-2: #e8d7b5;
+  --serif: "Instrument Serif", "Times New Roman", serif;
+  --sans: "Outfit", system-ui, sans-serif;
+
+  --text-xs: clamp(0.875rem, 0.82rem + 0.2vw, 0.9375rem);
+  --text-sm: clamp(0.875rem, 0.8rem + 0.3vw, 1rem);
+  --text-md: clamp(0.875rem, 0.8rem + 0.4vw, 1.125rem);
+  --text-lg: clamp(1rem, 0.9rem + 0.5vw, 1.2rem);
+  --text-xl: clamp(1.25rem, 1.1rem + 0.8vw, 1.5rem);
+  --text-2xl: clamp(1.75rem, 1.2rem + 2vw, 2.5rem);
+  --text-3xl: clamp(1.75rem, 1rem + 2.5vw, 2.8rem);
+  --text-4xl: clamp(1.85rem, 1rem + 3.2vw, 3.25rem);
+  --text-5xl: clamp(2.1rem, 1.1rem + 4.5vw, 4.5rem);
+  --text-display: clamp(2.75rem, 1rem + 10vw, 6.5rem);
+
+  --space-xs: clamp(0.25rem, 0.2rem + 0.15vw, 0.4rem);
+  --space-sm: clamp(0.4rem, 0.3rem + 0.35vw, 0.65rem);
+  --space-md: clamp(0.65rem, 0.5rem + 0.5vw, 1rem);
+  --space-lg: clamp(1rem, 0.75rem + 0.8vw, 1.5rem);
+  --space-xl: clamp(1.35rem, 1rem + 1.1vw, 2rem);
+  --space-2xl: clamp(1.85rem, 1.2rem + 1.8vw, 3rem);
+  --space-3xl: clamp(2.5rem, 1.5rem + 2.8vw, 4.5rem);
+
+  /* 640 / 960 / 1280. Chosen where layout actually changes, not by device name. */
+  --bp-sm: 40rem;
+  --bp-md: 60rem;
+  --bp-lg: 80rem;
+
+  --max: 80rem;
+  --measure: 38rem;
+  --measure-md: 42rem;
+  --measure-lg: 46rem;
+  --inset: max(var(--space-lg), calc((100% - min(100%, var(--max))) / 2));
+
+  --card-min: min(17.5rem, 100%);
+  --col-min: 18.75rem;
+  --tile-min: min(12.5rem, 100%);
+  --coming-col: 16rem;
+  --brand-basis: 10rem;
+  --logo: 1.75rem;
+  --tap: 2.75rem;
+  --field-min: 8rem;
+  --hairline: 1px;
+  --blur: 1rem;
+}

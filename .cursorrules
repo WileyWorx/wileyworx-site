@@ -17,5 +17,8 @@ Lead with director, producer, and EP for commercial productions. Camera and DP a
 ## Copy
 No hyphens, en dashes, or em dashes in visitor-facing text unless required (phone numbers, URLs, filenames, legal brand spellings). Prefer periods, commas, or colons. Do not call WileyWorx a production company or production house.
 
+## Responsive
+Follow `RESPONSIVE.md`. Tokens in `src/styles/tokens.css` are the only source for type, space, breakpoints, and container widths. Do not add `max-width` media queries, `vh`, pixel font sizes, or fixed layout widths. Components must work at 320px, in an arbitrary container, and with long titles. Parents own outer spacing.
+
 ## Git
 After completing a task that changes this site, commit and push to main without asking, unless the user says to stop.
