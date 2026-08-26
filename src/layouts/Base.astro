@@ -14,7 +14,7 @@ const path = Astro.url.pathname;
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="theme-color" content="#0b0a09" />
@@ -39,7 +39,9 @@ const path = Astro.url.pathname;
         <a href="/contact/" aria-current={path.startsWith("/contact") ? "page" : undefined}>Contact</a>
       </nav>
     </header>
-    <slot />
+    <main>
+      <slot />
+    </main>
     <footer class="site-footer">
       <div>WileyWorx · Salt Lake City</div>
       <div>

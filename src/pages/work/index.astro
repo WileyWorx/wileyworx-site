@@ -8,7 +8,7 @@ const cats: Array<"All" | Category> = ["All", "Commercial", "Narrative", "Music"
 <Base title="Work · Jack Wiley" description="Selected commercial, narrative, music, and sports work by director and producer Jack Wiley.">
   <section class="section">
     <div class="section-head">
-      <h2>Work</h2>
+      <h1>Work</h1>
     </div>
     <p class="prose lede">
       Credits from commercial productions, narrative films, music, and sports. Roles are listed as they were on the day: director, producer, camera, edit, and more.
@@ -29,7 +29,7 @@ const cats: Array<"All" | Category> = ["All", "Commercial", "Narrative", "Music"
               <span>{item.client || item.category}</span>
               <span>{item.year}</span>
             </div>
-            <h3>{item.title}</h3>
+            <h2>{item.title}</h2>
             <div class="card-meta"><span>{item.roles.filter((r) => r !== "Talent").slice(0, 3).join(" · ")}</span></div>
           </div>
         </a>

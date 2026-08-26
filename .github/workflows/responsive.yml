@@ -1,0 +1,42 @@
+name: Responsive
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+concurrency:
+  group: responsive-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    name: check-responsive
+    runs-on: macos-15
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - run: npx playwright install --with-deps chromium
+
+      - name: Run responsive checks
+        run: npm run check:responsive
+        env:
+          CI: true
+
+      - name: Upload failure screenshots
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: responsive-failures
+          path: |
+            test-results/
+            playwright-report/
+          retention-days: 14
