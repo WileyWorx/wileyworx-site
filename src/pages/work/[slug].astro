@@ -19,7 +19,7 @@ const embedSrc =
 <Base title={`${item.title} · Jack Wiley`} description={item.summary}>
   <section class="section">
     <p class="kicker">{item.client || item.category} · {item.year}</p>
-    <h1 style="font-size: clamp(2.4rem, 7vw, 4.8rem); margin: 0.4rem 0 0.6rem;">{item.title}</h1>
+    <h1 class="page-title">{item.title}</h1>
     <div class="roles">
       {item.roles.map((role) => <span>{role}</span>)}
     </div>
@@ -29,8 +29,8 @@ const embedSrc =
         <iframe src={embedSrc} title={item.title} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
       </div>
     ) : item.embed?.kind === "link" ? (
-      <p class="prose" style="margin-top: 1.5rem;">
-        <a href={item.embed.href} style="color: var(--accent);">{item.embed.label}</a>
+      <p class="prose lede">
+        <a href={item.embed.href}>{item.embed.label}</a>
       </p>
     ) : (
       <div class="player">
@@ -41,7 +41,7 @@ const embedSrc =
     <div class="prose">
       <p>{item.summary}</p>
       {item.credits && <p>{item.credits}</p>}
-      <p><a href="/work/" style="color: var(--accent);">Back to work</a></p>
+      <p><a href="/work/">Back to work</a></p>
     </div>
   </section>
 </Base>

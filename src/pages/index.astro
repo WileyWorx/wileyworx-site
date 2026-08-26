@@ -36,7 +36,7 @@ const spans = ["span-8", "span-4", "span-6", "span-6", "span-4", "span-8", "span
       <h2>Selected work</h2>
       <a href="/work/">Full archive</a>
     </div>
-    <div class="grid">
+    <div class="grid is-mosaic">
       {lead.map((item, i) => <WorkCard item={item} span={spans[i] || "span-6"} />)}
     </div>
   </section>
