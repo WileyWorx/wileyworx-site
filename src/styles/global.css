@@ -338,6 +338,13 @@ textarea { min-height: var(--field-min); resize: vertical; }
   object-fit: cover;
   border: 0;
 }
+.player:not(:has(iframe)) {
+  aspect-ratio: auto;
+}
+.player:not(:has(iframe)) img {
+  height: auto;
+  object-fit: contain;
+}
 .page-title {
   font-size: var(--text-5xl);
   margin: var(--space-xs) 0 var(--space-sm);

@@ -122,7 +122,7 @@ export const work: WorkItem[] = [
     featured: true,
     summary:
       "Interview content for Miracle: The Boys of '80, now streaming on Netflix.",
-    thumb: "/images/stills/slate.webp",
+    thumb: "/images/work/netflix-miracle.jpg",
   },
   {
     slug: "alive-app",
