@@ -57,6 +57,7 @@ export const comingSoon: string[] = [
   "AMICI, fashion commercial",
 ];
 
+/* Archive order matches wileyworx.com/recent/, newest blog post first. */
 export const work: WorkItem[] = [
   {
     slug: "shan-not-your-baby",
@@ -190,6 +191,21 @@ export const work: WorkItem[] = [
     credits: "Shot and directed by Kyle Murray. Produced by WileyWorx.",
     embed: { kind: "youtube", id: "e6f8QY1JuZE" },
     thumb: "/images/work/e6f8QY1JuZE.jpg",
+  },
+  {
+    slug: "voyage-utah",
+    title: "Voyage Utah interview",
+    client: "Voyage Utah",
+    year: 2025,
+    category: "Documentary",
+    roles: ["Talent"],
+    summary: "Full interview on the path from camera to producing.",
+    embed: {
+      kind: "link",
+      href: "https://voyageutah.com/interview/check-out-jack-wileys-story",
+      label: "Read the interview",
+    },
+    thumb: "/images/stills/landscape.webp",
   },
   {
     slug: "murmurs-set-free",
@@ -562,21 +578,6 @@ export const work: WorkItem[] = [
     summary: "A cut of favorite footage through 2020, assembled during the pandemic.",
     embed: { kind: "youtube", id: "uAUKd8oYOg4" },
     thumb: "/images/work/uAUKd8oYOg4.jpg",
-  },
-  {
-    slug: "voyage-utah",
-    title: "Voyage Utah interview",
-    client: "Voyage Utah",
-    year: 2025,
-    category: "Documentary",
-    roles: ["Talent"],
-    summary: "Full interview on the path from camera to producing.",
-    embed: {
-      kind: "link",
-      href: "https://voyageutah.com/interview/check-out-jack-wileys-story",
-      label: "Read the interview",
-    },
-    thumb: "/images/stills/landscape.webp",
   },
 ];
 
